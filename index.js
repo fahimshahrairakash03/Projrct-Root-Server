@@ -1,17 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-const corsConfig = {
-  origin: "*",
-  Credential: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
+
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.options("", cors(corsConfig));
-app.use(cors(corsConfig));
 app.use(express.json());
 
 //username: project-root-user
